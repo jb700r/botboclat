@@ -58,21 +58,6 @@ async function playSound(channel, soundFilePath) {
   }
 }
 
-// Exemple d'utilisation avec le client existant 'botboclat':
-botboclat.on('messageCreate', async message => {
-    if (message.content === '!play1') {
-      if (!message.member.voice.channel) {
-        return message.reply('You must be in a voice channel to use this command!');
-    }
-
-    try {
-        await playSound(message.member.voice.channel, 'sound/bomboclat2.mp3');
-    } catch (error) {
-        console.error('Error playing sound:', error);
-        message.reply('An error occurred while playing the sound.');
-    }
-    }
-});
 
 botboclat.on("interactionCreate", (interaction) => {
   if (!interaction.isChatInputCommand()) return;
@@ -104,24 +89,10 @@ botboclat.on("interactionCreate", (interaction) => {
     }
 }
 });
-/*
-botboclat.on("messageCreate", (message) => {
-  if (message.author.id == "446625751857496074") {
-    message.author.send("https://tenor.com/view/lean-codeine-promethazine-sprite-gif-5718593 this you?");
-    message.reply("https://tenor.com/view/lean-codeine-promethazine-sprite-gif-5718593 this you?");
-  }
-});
 
-botboclat.on("messageCreate", (message) => {
-  if (message.author.id == "664252922648854530") {
-    message.author.send("https://tenor.com/view/gambling-gamble-gambler-old-man-addiction-gif-13539663578305331391 this you?");
-    message.reply("https://tenor.com/view/gambling-gamble-gambler-old-man-addiction-gif-13539663578305331391 this you?");
-  }
-});
-*/
 botboclat.on('guildMemberAdd', (user) => {
   user.user.send("Welcome to hell!")
-  const channel01 = botboclat.channels.cache.find(channel => channel.id === '1226367309254230080');
+  const channel01 = botboclat.channels.cache.find(channel => channel.id === process.env.CHANNEL_ID);
   channel01.send(`Welcome ${user.user.username}!`);
 });
 
