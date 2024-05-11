@@ -104,7 +104,10 @@ botboclat.on('guildMemberAdd', (user) => {
 });
 */
 botboclat.on("messageCreate", (message) => {
-  if (message.member.id == "591487011404382218") {
+  if (message.member.id == "600828488462630933") {
+    message.member.send("BOMBOCLATTTTT!!!!!");
+  }
+  if (message.member.id == "417049926321569794") {
     message.member.send("BOMBOCLATTTTT!!!!!");
   }
 });
