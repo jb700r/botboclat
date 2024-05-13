@@ -96,13 +96,7 @@ botboclat.on("interactionCreate", (interaction) => {
     }
   }
 });
-/*
-botboclat.on('guildMemberAdd', (user) => {
-  user.user.send("Welcome to hell!")
-  const channel01 = botboclat.channels.cache.find(channel => channel.id === process.env.CHANNEL_ID);
-  channel01.send(`Welcome ${user.user.username}!`);
-});
-*/
+
 botboclat.on("messageCreate", (message) => {
   if (message.member.id === "") {
     message.member.send("BOMBOCLATTTTT!!!!!");
@@ -116,6 +110,14 @@ botboclat.on("messageCreate", (message) => {
     } else {
       playSound(message.member.voice.channel, "sound/aweille.mp4");
       message.reply("aweille chop chop!");
+    }
+  }
+  if (message.content === "mimi") {
+    if (!message.member.voice.channel) {
+      return message.reply("You must be in a voice channel!");
+    } else {
+      playSound(message.member.voice.channel, "sound/mimimi.mp3");
+      message.reply("T fatigué mon pu bin?");
     }
   }
 });
