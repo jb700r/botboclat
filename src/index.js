@@ -105,7 +105,7 @@ botboclat.on("interactionCreate", (interaction) => {
       interaction.reply("Fatigué");
     }
   }
-  if (interaction.commandName === "Super C") {
+  if (interaction.commandName === "superc") {
     if (!interaction.member.voice.channel) {
       return interaction.reply(
         "You must be in a voice channel to use this command!"
