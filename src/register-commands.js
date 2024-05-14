@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { REST, Routes,ApplicationCommandOptionType } = require("discord.js");
+const { REST, Routes, ApplicationCommandOptionType } = require("discord.js");
 
 const commands = [
   {
@@ -8,17 +8,24 @@ const commands = [
   },
   {
     name: "gamba",
-    description: "Please don't gamba :("
+    description: "Please don't gamba :(",
   },
   {
     name: "bomboclat_dog",
-    description: "play bomboclat dog in the voice channel"
+    description: "play bomboclat dog in the voice channel",
   },
   {
     name: "bomboclat",
-    description: "play bomboclat in the voice channel"
+    description: "play bomboclat in the voice channel",
   },
-
+  {
+    name: "fatigue",
+    description: "T fatigué mon pu bin?",
+  },
+  {
+    name: "superc",
+    description: "La fameuse réplique du vieux faché au Super C",
+  },
 ];
 
 const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);

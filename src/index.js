@@ -95,29 +95,24 @@ botboclat.on("interactionCreate", (interaction) => {
       interaction.reply("Playing bomboclat!");
     }
   }
-});
-
-botboclat.on("messageCreate", (message) => {
-  if (message.member.id === "") {
-    message.member.send("BOMBOCLATTTTT!!!!!");
-  }
-  if (message.member.id === "417049926321569794") {
-    message.member.send("BOMBOCLATTTTT!!!!!");
-  }
-  if (message.content === "aweille") {
-    if (!message.member.voice.channel) {
-      return message.reply("You must be in a voice channel!");
+  if (interaction.commandName === "fatigue") {
+    if (!interaction.member.voice.channel) {
+      return interaction.reply(
+        "You must be in a voice channel to use this command!"
+      );
     } else {
-      playSound(message.member.voice.channel, "sound/aweille.mp4");
-      message.reply("aweille chop chop!");
+      playSound(interaction.member.voice.channel, "sound/mimimi.mp3");
+      interaction.reply("Fatigué");
     }
   }
-  if (message.content === "mimi") {
-    if (!message.member.voice.channel) {
-      return message.reply("You must be in a voice channel!");
+  if (interaction.commandName === "Super C") {
+    if (!interaction.member.voice.channel) {
+      return interaction.reply(
+        "You must be in a voice channel to use this command!"
+      );
     } else {
-      playSound(message.member.voice.channel, "sound/mimimi.mp3");
-      message.reply("T fatigué mon pu bin?");
+      playSound(interaction.member.voice.channel, "sound/aweille.mp4");
+      interaction.reply("Aweille quoi?");
     }
   }
 });
